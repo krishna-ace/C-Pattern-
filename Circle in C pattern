@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+void display(int r){
+    int x,y;
+    int xsq, ysq;
+    int rsq = r*r;
+    for(x=-r;x<=r;x++)
+    {  
+        xsq = x*x;
+        printf("\t\t\t");//some tabs to make it kinda "centered"
+        for(y=-r;y<=r;y++)
+        {
+            int ysq = y*y;
+            int dsq = xsq + ysq;
+            if( dsq > rsq - r && dsq < rsq + r)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+}
+int main(){
+    int r;
+    printf("Enter radius:");
+    scanf("%d",&r);
+    display(r);
+    return 0;
+}
