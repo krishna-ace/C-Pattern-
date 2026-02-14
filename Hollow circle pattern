@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int r = 8;
+
+    for(int i = -r; i <= r; i++) {
+        for(int j = -2*r; j <= 2*r; j++) {
+            int value = i*i + j*j;
+            if(value >= r*r*4 - r*4 && value <= r*r*4 + r*4)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
