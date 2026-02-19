@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int rows = 6;
+
+    for (int i = 0; i < rows; i++) {
+        if (i < rows - 1) {
+            printf(".");
+            
+            int spaces = 3 + (i * 4);
+            for (int s = 0; s < spaces; s++) {
+                printf(" ");
+            }
+            
+            printf("***\n\n");
+        } 
+        else {
+            for (int j = 0; j < rows; j++) {
+                printf(".   ");
+            }
+            
+            printf("***\n");
+        }
+    }
+
+    return 0;
+}
