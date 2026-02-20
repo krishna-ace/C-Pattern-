@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    int board[8][8] = {0};
+    int row = 4, col = 4;
+
+    int moveX[8] = {-2,-2,-1,-1,1,1,2,2};
+    int moveY[8] = {-1,1,-2,2,-2,2,-1,1};
+
+    for(int i = 0; i < 8; i++)
+    {
+        int newRow = row + moveX[i];
+        int newCol = col + moveY[i];
+
+        if(newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8)
+            board[newRow][newCol] = 1;
+    }
+
+    printf("Knight's Possible Moves from Center:\n\n");
+
+    for(int i = 0; i < 8; i++)
+    {
+        for(int j = 0; j < 8; j++)
+        {
+            if(i == row && j == col)
+                printf(" XX ");
+            else if(board[i][j] == 1)
+                printf(" K  ");
+            else
+                printf(" .  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
