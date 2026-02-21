@@ -1,0 +1,33 @@
+#include <stdio.h>  
+int main(void) 
+{  
+  int x;  
+  printf("Enter the number: ");  
+  scanf("%d",&x);  
+  //printing the upper part of the pattern..  
+ for(int i=1;i<=x;i++)  
+ {  
+   for(int j=1;j<=x-i;j++)  
+   {  
+       printf(" ");  
+   }  
+   for(int k=0;k<=x-i;k++)  
+   {  
+     printf("*");  
+   }  
+   printf("\n");  
+ }  
+for(int i=1;i<x;i++)  
+{  
+  for(int j=1;j<i+1;j++)  
+  {  
+    printf(" ");  
+  }  
+  for(int k=1;k<=i+1;k++)  
+  {  
+    printf("*");  
+  }  
+  printf("\n");  
+}  
+  return 0;  
+}  
