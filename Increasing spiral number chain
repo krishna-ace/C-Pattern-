@@ -2,18 +2,14 @@
 int main()
 {
     int i, num = 1;
-
     for(i = 1; i <= 25; i++)
     {
         printf("%d", num++);
-
         if(i % 3 == 0)
         {
             printf(" %d %d", num++, num++);
         }
-
         printf("\n");
     }
-
     return 0;
 }
