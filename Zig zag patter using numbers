@@ -1,32 +1,30 @@
 #include <stdio.h>
+
 int main() {
-    int charactersInLine, zigzagLines;
+    int n, lines;
+
     printf("Number of characters in a line: ");
-    scanf("%d", &charactersInLine);
+    scanf("%d", &n);
+
     printf("Enter the number of zigzag lines: ");
-    scanf("%d", &zigzagLines);
-    for (int i = 1; i <= zigzagLines; i++) {
-        for (int r = 1; r <= charactersInLine; r++) {
-            for (int c = 1; c <= charactersInLine; c++) {
-                if (r == c) {
-                    printf("%d ", r);
-                } else {
-                    printf("  ");
-                }
-            }
+    scanf("%d", &lines);
+
+    for (int i = 1; i <= lines; i++) {
+
+        // Main diagonal
+        for (int r = 1; r <= n; r++) {
+            for (int c = 1; c <= n; c++)
+                printf((r == c) ? "%d " : "  ", r);
             printf("\n");
         }
-        for (int r = 1; r <= charactersInLine; r++) {
-            for (int c = 1; c <= charactersInLine; c++) {
-                if (c <= (charactersInLine + 1 - r)) {
-                    if (c == (charactersInLine + 1 - r)) {
-                        printf("%d ", r);
-                    } else {
-                        printf("  ");
-                    }
-                }
-            }
+
+        // Opposite diagonal
+        for (int r = 1; r <= n; r++) {
+            for (int c = 1; c <= n; c++)
+                printf((c == n + 1 - r) ? "%d " : "  ", r);
             printf("\n");
         }
     }
+
     return 0;
+}
