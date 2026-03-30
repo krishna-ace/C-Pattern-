@@ -1,7 +1,6 @@
 #include <stdio.h>
 int main() {
     int r = 8;
-
     for(int i = -r; i <= r; i++) {
         for(int j = -2*r; j <= 2*r; j++) {
             int value = i*i + j*j;
@@ -12,6 +11,5 @@ int main() {
         }
         printf("\n");
     }
-
     return 0;
 }
